@@ -27,10 +27,10 @@ class SpringHlApplicationTests {
 
     @Test
     void contextLoads() {
-        ResponseEntity<String> forEntity = restTemplate.getForEntity("http://localhost:" + devapp.getMappedPort(8080), String.class);
+        ResponseEntity<String> forEntity = restTemplate.getForEntity("http://localhost:" + devapp.getMappedPort(8090) + "/profile", String.class);
         System.out.println(forEntity.getBody());
 
-        ResponseEntity<String> forEntityTwo = restTemplate.getForEntity("http://localhost:" + prodapp.getMappedPort(8080), String.class);
+        ResponseEntity<String> forEntityTwo = restTemplate.getForEntity("http://localhost:" + prodapp.getMappedPort(8081) + "/profile", String.class);
         System.out.println(forEntityTwo.getBody());
     }
 }
